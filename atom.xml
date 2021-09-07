@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[XX0XX]]></title>
-  <link href="www./atom.xml" rel="self"/>
-  <link href="www./"/>
-  <updated>2021-09-08T01:40:46+08:00</updated>
-  <id>www./</id>
+  <title><![CDATA[太平天国]]></title>
+  <link href="www.hfwang2020.github.io/atom.xml" rel="self"/>
+  <link href="www.hfwang2020.github.io/"/>
+  <updated>2021-09-08T01:48:21+08:00</updated>
+  <id>www.hfwang2020.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[hers is my blog!]]></title>
-    <link href="www./16310365512511.html"/>
+    <link href="www.hfwang2020.github.io/16310365512511.html"/>
     <updated>2021-09-08T01:42:31+08:00</updated>
-    <id>www./16310365512511.html</id>
+    <id>www.hfwang2020.github.io/16310365512511.html</id>
     <content type="html"><![CDATA[
 <p>test</p>
 
