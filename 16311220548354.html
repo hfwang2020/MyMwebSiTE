@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  Archives - 太平天国
+  memcpy() 注意事项 - 太平天国
   
   </title>
  <meta name="description" content="@洪秀拳">
@@ -70,40 +70,71 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-	
-		 
-		  	<h2>2021</h2>
-		
-		
-			<div>
-				<h3><a href="16311220548354.html">memcpy() 注意事项</a></h3>
-				<p>
-					<time datetime="2021-09-09T01:27:34+08:00" pubdate><span class='month'>9月</span> <span class='day'>09</span> <span class='year'>2021</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='code.html'>code</a>&nbsp;
-				   
-				  </span>
+<h1>memcpy() 注意事项</h1>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="16310365512511.html">hers is my blog!</a></h3>
-				<p>
-					<time datetime="2021-09-08T01:42:31+08:00" pubdate><span class='month'>9月</span> <span class='day'>08</span> <span class='year'>2021</span></time>
-					&nbsp;&nbsp;
-				  
-				   
-				  
+<p>Defined in header <cstring></p>
+<p>函数原型 <code>void* memcpy( void* dest, const void* src, std::size_t count ); </code></p>
+<p><strong>参数解释</strong></p>
+<ul>
+<li>dest 目标地址</li>
+<li>src  拷贝对象地址</li>
+<li>count 拷贝字节大小</li>
+</ul>
+<pre class="line-numbers"><code class="language-plain_text">int main(int argc, char const* argv[]) {
+    int a[] = { 0,1,2 };
+    int *b;
+    memcpy(b, a, sizeof(a));
+    cout &lt;&lt; *b &lt;&lt; endl;
+}
+</code></pre>
+<p>上面这种情况报错，*b只是声明未定义。</p>
+<pre class="line-numbers"><code class="language-plain_text">int main(int argc, char const* argv[]) {
+    int a[] = { 0,1,2 };
+    int *b = (int*)malloc(1);
+    // or int b[0];
+    memcpy(b, a, sizeof(a));
+    cout &lt;&lt; *b &lt;&lt; endl;
+}
+</code></pre>
+<p>需要b有定义后才能copy.</p>
 
-				</p>
-			</div>
- 	 
-</div>  
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="16310365512511.html" 
+	        title="Next Post: hers is my blog!">hers is my blog! &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '16311220548354.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 
@@ -142,6 +173,8 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
 
 
 
+
+<script src="asset/prism.js"></script>
 
 
 <style type="text/css">

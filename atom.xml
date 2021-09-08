@@ -4,7 +4,7 @@
   <title><![CDATA[太平天国]]></title>
   <link href="www.hfwang2020.github.io/atom.xml" rel="self"/>
   <link href="www.hfwang2020.github.io/"/>
-  <updated>2021-09-08T01:48:21+08:00</updated>
+  <updated>2021-09-09T01:32:54+08:00</updated>
   <id>www.hfwang2020.github.io/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://www.mweb.im">MWeb</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[memcpy() 注意事项]]></title>
+    <link href="www.hfwang2020.github.io/16311220548354.html"/>
+    <updated>2021-09-09T01:27:34+08:00</updated>
+    <id>www.hfwang2020.github.io/16311220548354.html</id>
+    <content type="html"><![CDATA[
+<p>Defined in header <cstring></p>
+<p>函数原型 <code>void* memcpy( void* dest, const void* src, std::size_t count ); </code></p>
+<p><strong>参数解释</strong></p>
+<ul>
+<li>dest 目标地址</li>
+<li>src  拷贝对象地址</li>
+<li>count 拷贝字节大小</li>
+</ul>
+<pre class="line-numbers"><code class="language-plain_text">int main(int argc, char const* argv[]) {
+    int a[] = { 0,1,2 };
+    int *b;
+    memcpy(b, a, sizeof(a));
+    cout &lt;&lt; *b &lt;&lt; endl;
+}
+</code></pre>
+<p>上面这种情况报错，*b只是声明未定义。</p>
+<pre class="line-numbers"><code class="language-plain_text">int main(int argc, char const* argv[]) {
+    int a[] = { 0,1,2 };
+    int *b = (int*)malloc(1);
+    // or int b[0];
+    memcpy(b, a, sizeof(a));
+    cout &lt;&lt; *b &lt;&lt; endl;
+}
+</code></pre>
+<p>需要b有定义后才能copy.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[hers is my blog!]]></title>
